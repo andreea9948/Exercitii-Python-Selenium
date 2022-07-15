@@ -63,7 +63,7 @@ def run_ex3(page):
     if count_rls is not None:
         message = f'Exista {len(count_rls)} release-uri pentru ultima versiune\n'
     else:
-        messgae = 'Nu exista release pentru ultima versiune\n'
+        message = 'Nu exista release pentru ultima versiune\n'
 
     latest_release = page.table_releases.get_elem_by_index(1)
     latest_release_date = TableReleases.get_date(latest_release)
@@ -78,6 +78,7 @@ def run_ex3(page):
         message += f'Corect - data primului release este {first_release_date} si a ultimului {latest_release_date}'
 
     return message
+
 
 if __name__ == "__main__":
     run_ex1()

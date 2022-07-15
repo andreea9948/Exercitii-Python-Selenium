@@ -64,12 +64,3 @@ class PepPage(Page):
         bullets = Driver.driver.find_elements_by_xpath(xpath)
         return len(bullets)
 
-    @staticmethod
-    def check_nr_bullets(expected_nr, actual_nr):
-        message = ''
-        if expected_nr == actual_nr:
-            message = f'Corect - Sunt {expected_nr} exemple'
-        else:
-            message = f'Gresit! Numarul de exemple gasit este {actual_nr}'
-
-        print(message)
