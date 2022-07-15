@@ -53,7 +53,6 @@ class TableVersions(Table):
 
     def get_version_by_release(self, release):
         release = ".".join(release.split(' ')[1].split('.')[0:2])
-        print(release)
 
         first_rls_date_elem = self.table.find_element_by_xpath(
             f'.//li[./span[@class="release-version" and text()="{release}"]]')

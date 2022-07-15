@@ -1,9 +1,19 @@
 from Pages import *
+import time
 
 
-def run_ex1():
+def open_close(func):
+    def wrapper():
+        page = HomePage()
+        func(page)
+        time.sleep(10)
+        Driver.close_driver()
+    return wrapper
+
+
+@open_close
+def run_ex1(page):
     #ex1
-    page = HomePage()
     submenu_downloads = page.navMenu.hover_category("downloads")
     all_rls = page.navMenu.search_subcategory("All releases", submenu_downloads)
     HomePage.click_element(all_rls)
@@ -14,9 +24,9 @@ def run_ex1():
     print(f'Cel mai nou release - {latest_release}')
 
 
-def run_ex2():
+@open_close
+def run_ex2(page):
     #ex2
-    page = HomePage()
     page.searchBar.put_text('decorator')
     HomePage.click_element(HomePage.get_element_by_xpath(HomePage.searchButton_xpath))
     first_res = ResultsPage.get_result_by_index(1)
@@ -28,9 +38,9 @@ def run_ex2():
     PepPage.check_nr_bullets(5, nr_examples)
 
 
-def run_ex3():
+@open_close
+def run_ex3(page):
     #ex3
-    page = HomePage()
     submenu_downloads = page.navMenu.hover_category("downloads")
     all_rls = page.navMenu.search_subcategory("All releases", submenu_downloads)
     HomePage.click_element(all_rls)
@@ -58,12 +68,6 @@ def run_ex3():
 
 
 if __name__ == "__main__":
-    #First version
-    #ex1()
-    #ex2()
-    #ex3()
-
-    #Second version:
-    run_ex1()
+    #run_ex1()
     #run_ex2()
-    #run_ex3()
+    run_ex3()
