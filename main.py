@@ -1,4 +1,10 @@
-from Pages import *
+from Page import *
+from HomePage import *
+from Driver import *
+from DownloadsPage import *
+from ResultsPage import *
+from PepPage import *
+
 import time
 
 

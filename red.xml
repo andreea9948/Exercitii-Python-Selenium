@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectConfiguration>
+    <configVersion>2</configVersion>
+    <relativeTo>WORKSPACE</relativeTo>
+    <referencedLibrary type="PYTHON" name="DownloadsPage" path="robot-exercitii/DownloadsPage.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="HomePage" path="robot-exercitii/HomePage.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="NavMenu" path="robot-exercitii/NavMenu.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="Page" path="robot-exercitii/Page.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="PepPage" path="robot-exercitii/PepPage.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="ResultsPage" path="robot-exercitii/ResultsPage.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="SearchBar" path="robot-exercitii/SearchBar.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="Table" path="robot-exercitii/Table.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="TableReleases" path="robot-exercitii/TableReleases.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="TableVersions" path="robot-exercitii/TableVersions.py" dynamic="true"/>
+    <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="robot-exercitii/venv/Lib/site-packages/SeleniumLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="Driver" path="robot-exercitii/Driver.py" dynamic="true"/>
+    <pythonpath/>
+    <classpath/>
+    <excludedForValidation/>
+    <isValidatedFileSizeCheckingEnabled>true</isValidatedFileSizeCheckingEnabled>
+    <validatedFileMaxSize>1024</validatedFileMaxSize>
+</projectConfiguration>

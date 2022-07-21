@@ -1,30 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.7.4 on win32)" generated="20220715 14:34:00.471" rpa="false">
-<suite id="s1" name="demoRobot" source="C:\Users\AnCojocaru\Desktop\Exercitii\Python+Selenium\demoRobot.robot">
-<kw name="Open Browser" library="Selenium2Library" type="setup">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<robot generator="Robot 3.2.2 (Python 3.7.4 on win32)" generated="20220721 15:09:50.158" rpa="false">
+<suite id="s1" name="Python+Selenium" source="C:\Users\AnCojocaru\Desktop\Exercitii\Python+Selenium">
+<suite id="s1-s1" name="demoRobot" source="C:\Users\AnCojocaru\Desktop\Exercitii\Python+Selenium\demoRobot.robot">
+<test id="s1-s1-t1" name="Ex5">
+<kw name="Start Driver" library="Driver" type="setup">
+<status status="PASS" starttime="20220721 15:09:50.395" endtime="20220721 15:09:53.177"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
 <arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>DEBUG</arg>
 </arguments>
-<msg timestamp="20220715 14:34:00.688" level="INFO">Opening browser 'Chrome' to base url 'http://www.google.com'.</msg>
-<msg timestamp="20220715 14:34:00.705" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20220715 14:34:00.705" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
-</msg>
-<status status="FAIL" starttime="20220715 14:34:00.688" endtime="20220715 14:34:00.705"></status>
+<msg timestamp="20220721 15:09:53.178" level="INFO">Log level changed from INFO to DEBUG.</msg>
+<status status="PASS" starttime="20220721 15:09:53.177" endtime="20220721 15:09:53.179"></status>
 </kw>
-<test id="s1-t1" name="Google Search">
-<status status="FAIL" starttime="20220715 14:34:00.705" endtime="20220715 14:34:00.705" critical="yes">Parent suite setup failed:
-WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
-</status>
+<kw name="Put Text" library="HomePage">
+<arguments>
+<arg>${args_5.text}</arg>
+</arguments>
+<msg timestamp="20220721 15:09:53.179" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element {"using": "xpath", "value": ".//form[@class=\"search-the-site\"]//input[@id=\"id-search-field\"]"}</msg>
+<msg timestamp="20220721 15:09:53.193" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element HTTP/1.1" 200 88</msg>
+<msg timestamp="20220721 15:09:53.193" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220721 15:09:53.193" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element/97c4d93e-c414-4e83-9138-0ff3bd4b6e2d/value {"text": "decorator", "value": ["d", "e", "c", "o", "r", "a", "t", "o", "r"], "id": "97c4d93e-c414-4e83-9138-0ff3bd4b6e2d"}</msg>
+<msg timestamp="20220721 15:09:53.243" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element/97c4d93e-c414-4e83-9138-0ff3bd4b6e2d/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220721 15:09:53.244" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220721 15:09:53.179" endtime="20220721 15:09:53.244"></status>
+</kw>
+<kw name="Click Search Button">
+<kw name="Get SearchButton Xpath" library="HomePage">
+<assign>
+<var>${search_button_xpath}</var>
+</assign>
+<msg timestamp="20220721 15:09:53.245" level="INFO">${search_button_xpath} = .//button[@class="search-button"]</msg>
+<status status="PASS" starttime="20220721 15:09:53.244" endtime="20220721 15:09:53.245"></status>
+</kw>
+<kw name="Get Element By Xpath" library="HomePage">
+<arguments>
+<arg>${search_button_xpath}</arg>
+</arguments>
+<assign>
+<var>${search_button}</var>
+</assign>
+<msg timestamp="20220721 15:09:53.245" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element {"using": "xpath", "value": ".//button[@class=\"search-button\"]"}</msg>
+<msg timestamp="20220721 15:09:53.257" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element HTTP/1.1" 200 88</msg>
+<msg timestamp="20220721 15:09:53.258" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220721 15:09:53.258" level="INFO">${search_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="16e85297a05efc2fe7c946bf104868c1", element="de4a3008-1c12-4c0f-98ec-4de205c3bf76")&gt;</msg>
+<status status="PASS" starttime="20220721 15:09:53.245" endtime="20220721 15:09:53.258"></status>
+</kw>
+<kw name="Click Element" library="HomePage">
+<arguments>
+<arg>${search_button}</arg>
+</arguments>
+<msg timestamp="20220721 15:09:53.259" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element/de4a3008-1c12-4c0f-98ec-4de205c3bf76/click {"id": "de4a3008-1c12-4c0f-98ec-4de205c3bf76"}</msg>
+<msg timestamp="20220721 15:09:53.953" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element/de4a3008-1c12-4c0f-98ec-4de205c3bf76/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220721 15:09:53.955" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220721 15:09:53.258" endtime="20220721 15:09:53.955"></status>
+</kw>
+<status status="PASS" starttime="20220721 15:09:53.244" endtime="20220721 15:09:53.956"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Log de debug</arg>
+<arg>level=DEBUG</arg>
+</arguments>
+<msg timestamp="20220721 15:09:53.957" level="DEBUG">Log de debug</msg>
+<status status="PASS" starttime="20220721 15:09:53.956" endtime="20220721 15:09:53.957"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Log de info</arg>
+<arg>level=INFO</arg>
+</arguments>
+<msg timestamp="20220721 15:09:53.957" level="INFO">Log de info</msg>
+<status status="PASS" starttime="20220721 15:09:53.957" endtime="20220721 15:09:53.957"></status>
+</kw>
+<kw name="Get Result By Index" library="ResultsPage">
+<arguments>
+<arg>${args_5.res_index}</arg>
+</arguments>
+<assign>
+<var>${first_result}</var>
+</assign>
+<msg timestamp="20220721 15:09:53.958" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element {"using": "xpath", "value": ".//ul[@class=\"list-recent-events menu\"]/li[1]//a"}</msg>
+<msg timestamp="20220721 15:09:53.967" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element HTTP/1.1" 200 88</msg>
+<msg timestamp="20220721 15:09:53.968" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220721 15:09:53.968" level="INFO">${first_result} = &lt;selenium.webdriver.remote.webelement.WebElement (session="16e85297a05efc2fe7c946bf104868c1", element="6ecc3410-c8da-4595-b1a5-db7a5063ef33")&gt;</msg>
+<status status="PASS" starttime="20220721 15:09:53.958" endtime="20220721 15:09:53.968"></status>
+</kw>
+<kw name="Click Element" library="ResultsPage">
+<arguments>
+<arg>${first_result}</arg>
+</arguments>
+<msg timestamp="20220721 15:09:53.968" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element/6ecc3410-c8da-4595-b1a5-db7a5063ef33/click {"id": "6ecc3410-c8da-4595-b1a5-db7a5063ef33"}</msg>
+<msg timestamp="20220721 15:09:54.791" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element/6ecc3410-c8da-4595-b1a5-db7a5063ef33/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220721 15:09:54.791" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220721 15:09:53.968" endtime="20220721 15:09:54.791"></status>
+</kw>
+<kw name="Find In Contents" library="PepPage">
+<arguments>
+<arg>${args_5.categ}</arg>
+</arguments>
+<assign>
+<var>${examples}</var>
+</assign>
+<msg timestamp="20220721 15:09:54.792" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element {"using": "xpath", "value": ".//nav[./h2[text()=\"Contents\"]]/ul/li[./a[text()=\"Examples\"]]/a"}</msg>
+<msg timestamp="20220721 15:09:54.801" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element HTTP/1.1" 200 88</msg>
+<msg timestamp="20220721 15:09:54.801" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220721 15:09:54.802" level="INFO">${examples} = &lt;selenium.webdriver.remote.webelement.WebElement (session="16e85297a05efc2fe7c946bf104868c1", element="f1c6cc57-d335-44e5-88eb-36ce641d9689")&gt;</msg>
+<status status="PASS" starttime="20220721 15:09:54.792" endtime="20220721 15:09:54.802"></status>
+</kw>
+<kw name="Click Element" library="PepPage">
+<arguments>
+<arg>${examples}</arg>
+</arguments>
+<msg timestamp="20220721 15:09:54.802" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/element/f1c6cc57-d335-44e5-88eb-36ce641d9689/click {"id": "f1c6cc57-d335-44e5-88eb-36ce641d9689"}</msg>
+<msg timestamp="20220721 15:09:54.831" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/element/f1c6cc57-d335-44e5-88eb-36ce641d9689/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220721 15:09:54.831" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220721 15:09:54.802" endtime="20220721 15:09:54.832"></status>
+</kw>
+<kw name="Count Bullets" library="PepPage">
+<arguments>
+<arg>${args_5.count_xpath}</arg>
+</arguments>
+<assign>
+<var>${nr_examples}</var>
+</assign>
+<msg timestamp="20220721 15:09:54.834" level="DEBUG">POST http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/elements {"using": "xpath", "value": ".//section[@id=\"examples\"]/ol/li"}</msg>
+<msg timestamp="20220721 15:09:54.847" level="DEBUG">http://localhost:59797 "POST /session/16e85297a05efc2fe7c946bf104868c1/elements HTTP/1.1" 200 406</msg>
+<msg timestamp="20220721 15:09:54.847" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220721 15:09:54.848" level="INFO">${nr_examples} = 5</msg>
+<status status="PASS" starttime="20220721 15:09:54.833" endtime="20220721 15:09:54.848"></status>
+</kw>
+<kw name="Check Nr Bullets" library="PepPage">
+<arguments>
+<arg>${args_5.nr_bullets}</arg>
+<arg>${nr_examples}</arg>
+</arguments>
+<msg timestamp="20220721 15:09:54.850" level="FAIL">Numarul de bullets este 5 si ar trebui sa fie 4</msg>
+<msg timestamp="20220721 15:09:54.850" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\AnCojocaru\Desktop\Exercitii\Python+Selenium\PepPage.py", line 22, in check_nr_bullets
+    BuiltIn().fail(f"Numarul de bullets este {actual_nr} si ar trebui sa fie {expected_nr}")
+  File "C:\Users\AnCojocaru\PycharmProjects\pythonProject\venv\lib\site-packages\robot\libraries\BuiltIn.py", line 533, in fail
+    raise AssertionError(msg) if msg else AssertionError()</msg>
+<status status="FAIL" starttime="20220721 15:09:54.848" endtime="20220721 15:09:54.850"></status>
+</kw>
+<kw name="Close Driver" library="Driver" type="teardown">
+<msg timestamp="20220721 15:09:54.851" level="DEBUG">DELETE http://localhost:59797/session/16e85297a05efc2fe7c946bf104868c1/window {}</msg>
+<msg timestamp="20220721 15:09:54.934" level="DEBUG">http://localhost:59797 "DELETE /session/16e85297a05efc2fe7c946bf104868c1/window HTTP/1.1" 200 12</msg>
+<msg timestamp="20220721 15:09:54.934" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20220721 15:09:54.851" endtime="20220721 15:09:54.934"></status>
+</kw>
+<doc>Search decorator and open the first link. Go to examples and make sure there are 4 bullets - Using dictionary</doc>
+<status status="FAIL" starttime="20220721 15:09:50.394" endtime="20220721 15:09:54.934" critical="yes">Numarul de bullets este 5 si ar trebui sa fie 4</status>
 </test>
-<kw name="Close All Browsers" library="Selenium2Library" type="teardown">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220715 14:34:00.705" endtime="20220715 14:34:00.705"></status>
-</kw>
-<status status="FAIL" starttime="20220715 14:34:00.471" endtime="20220715 14:34:00.705">Suite setup failed:
-WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
-</status>
+<status status="FAIL" starttime="20220721 15:09:50.210" endtime="20220721 15:09:54.935"></status>
+</suite>
+<status status="FAIL" starttime="20220721 15:09:50.194" endtime="20220721 15:09:54.938"></status>
 </suite>
 <statistics>
 <total>
@@ -34,7 +167,8 @@ WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Plea
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="demoRobot">demoRobot</stat>
+<stat pass="0" fail="1" id="s1" name="Python+Selenium">Python+Selenium</stat>
+<stat pass="0" fail="1" id="s1-s1" name="demoRobot">Python+Selenium.demoRobot</stat>
 </suite>
 </statistics>
 <errors>
